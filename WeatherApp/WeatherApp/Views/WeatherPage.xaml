@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.Views.WeatherPage"
+             Title="Weather App">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" Padding="10">
+      <Button Text="Get Weather" Command="{Binding GetWeather}" IsEnabled="{Binding !IsBusy}"/>
+      <Label Text="{Binding Temperature}"  x:Name="txtTemperature"/>
+      <Label Text="{Binding Condition}"  x:Name="txtCondition"/>
+      <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
