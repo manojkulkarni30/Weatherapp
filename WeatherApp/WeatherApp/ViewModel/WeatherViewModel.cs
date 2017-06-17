@@ -143,6 +143,7 @@ namespace WeatherApp.ViewModel
                 catch (Exception ex)
                 {
                     Temperature = "Unable to get the Weather";
+                    Condition = string.Empty;
                     Debug.WriteLine(ex.Message);
                 }
                 finally
