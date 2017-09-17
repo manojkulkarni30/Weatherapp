@@ -89,7 +89,7 @@ namespace WeatherApp.ViewModel
 
         private async Task<WeatherRoot> GetWeatherByGeographicCoordinatesAsync()
         {
-            var currentLocation = await CrossGeolocator.Current.GetPositionAsync(10000);
+            var currentLocation = await CrossGeolocator.Current.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
             if (currentLocation != null)
             {
                 return await weatherService
