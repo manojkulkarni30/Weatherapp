@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace WeatherApp.Models
 {
     public class Coord
     {
-        [JsonProperty(PropertyName ="lon")]
+        [JsonProperty(PropertyName = "lon")]
         public double Longitude { get; set; }
         [JsonProperty(PropertyName = "lat")]
         public double Latitude { get; set; }
