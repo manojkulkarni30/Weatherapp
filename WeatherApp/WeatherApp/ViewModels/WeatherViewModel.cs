@@ -104,7 +104,7 @@ namespace WeatherApp.ViewModels
             if (currentLocation != null)
             {
                 return await weatherService
-                    .GetWeatherByLatitudeAndLongitudeAsyc(currentLocation.Latitude, currentLocation.Longitude);
+                    .GetWeatherByLatitudeAndLongitudeAsyc(currentLocation.Latitude, currentLocation.Longitude).ConfigureAwait(false);
             }
             return null;
         }
@@ -134,9 +134,9 @@ namespace WeatherApp.ViewModels
                     if (UseGps)
                         weather = await GetWeatherByGeographicCoordinatesAsync();
                     else if (IsZipCode())
-                        weather = await weatherService.GetWeatherByZipCodeAsync(CityOrZipCode);
+                        weather = await weatherService.GetWeatherByZipCodeAsync(CityOrZipCode).ConfigureAwait(false);
                     else
-                        weather = await weatherService.GetWeatherByCityAsync(CityOrZipCode);
+                        weather = await weatherService.GetWeatherByCityAsync(CityOrZipCode).ConfigureAwait(false);
 
                     if (weather != null)
                     {
